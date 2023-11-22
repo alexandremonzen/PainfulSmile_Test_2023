@@ -1,3 +1,5 @@
+//Original from https://github.com/ewersp/Shaders/blob/master/ScrollingSprite.shader
+
 // Based off of builtin_shaders-2019.1.7f1/DefaultResourcesExtra/Sprites-Default
 Shader "Custom/Scrolling Sprite" {
 	Properties {
