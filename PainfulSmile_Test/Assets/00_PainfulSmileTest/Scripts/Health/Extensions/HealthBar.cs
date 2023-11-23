@@ -2,6 +2,7 @@ using UnityEngine;
 
 public sealed class HealthBar : MonoBehaviour
 {
+    [Header("Map values to fill bar")]
     [SerializeField] private float _minValueRange = 0;
     [SerializeField] private float _maxValueRange = 100;
     private float _valueMapped;
