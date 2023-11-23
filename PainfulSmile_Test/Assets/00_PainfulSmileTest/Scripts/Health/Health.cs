@@ -5,6 +5,7 @@ using UnityEngine;
 public sealed class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] private HealthAttributes _healthAttributes;
+    [SerializeField] private Team _team = Team.None;
     private int _maxHealth;
     private int _currentHealth;
 
@@ -32,8 +33,11 @@ public sealed class Health : MonoBehaviour, IDamageable
         HealthValueWasChanged?.Invoke(_currentHealth);
     }
 
-    public void TakeDamage(int damageValue)
+    public void TakeDamage(int damageValue, Team team)
     {
+        if(_team == team)
+            return;
+
         _currentHealth -= damageValue;
         HealthValueWasChanged?.Invoke(_currentHealth);
 
@@ -47,6 +51,11 @@ public sealed class Health : MonoBehaviour, IDamageable
     public void Die()
     {
         HealthWasDepleted?.Invoke();
+        this.gameObject.SetActive(false);
     }
 
+    public Team GetTeamSide()
+    {
+        return _team;
+    }
 }
