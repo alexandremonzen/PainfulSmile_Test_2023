@@ -162,7 +162,8 @@ GameObject:
   - component: {fileID: 3417695105264024236}
   - component: {fileID: 3212813241963433683}
   - component: {fileID: 7111487503681491455}
-  - component: {fileID: 5758892223862980028}
+  - component: {fileID: 5780839224777478953}
+  - component: {fileID: 722347561953505842}
   - component: {fileID: 3076878890615281375}
   m_Layer: 0
   m_Name: CannonBall
@@ -219,7 +220,7 @@ MonoBehaviour:
   _autoDestroy: 1
   _onCollision: 1
   _onTrigger: 1
---- !u!114 &5758892223862980028
+--- !u!114 &5780839224777478953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,10 +229,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5569053094393142125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9c8dfacbe5f834eaa361dfd3157837, type: 3}
+  m_Script: {fileID: 11500000, guid: 542fcbdbfdb390748be44b51398814ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToDeactivate: 4
+--- !u!114 &722347561953505842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569053094393142125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad0c121dbadd6a43a50bdd0b9b4b12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 7507507375670350292, guid: c0a17c797a9b700459f54edd9f6aaf1e, type: 3}
 --- !u!50 &3076878890615281375
 Rigidbody2D:
   serializedVersion: 4

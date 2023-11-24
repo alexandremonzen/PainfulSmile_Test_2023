@@ -1,20 +1,25 @@
 using UnityEngine;
 
-public class SpawnObjectOnDeath : MonoBehaviour
+public sealed class SpawnObjectDamageOnContact : MonoBehaviour
 {
     [SerializeField] private Component _explosionPrefab;
-    private Health _health;
+    private DamageOnContact _damageOnContact;
     private GameObjectPoolManager _gameObjectPoolManager;
 
     private void Awake()
     {
-        _health = GetComponent<Health>();
+        _damageOnContact = GetComponent<DamageOnContact>();
         _gameObjectPoolManager = FindFirstObjectByType<GameObjectPoolManager>();
     }
 
     private void OnEnable()
     {
-        _health.HealthWasDepleted += SpawnVFX;
+        _damageOnContact.WasDestroyed += SpawnVFX;
+    }
+
+    private void OnDisable()
+    {
+        _damageOnContact.WasDestroyed -= SpawnVFX;
     }
 
     private void SpawnVFX()

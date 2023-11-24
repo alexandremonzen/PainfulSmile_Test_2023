@@ -1,22 +1,14 @@
 using UnityEngine;
 
-public sealed class PlayerCannon : MonoBehaviour
+public sealed class PlayerCannon : Cannon
 {
-    [SerializeField] private CannonBall _cannonBall;
     [SerializeField] private PlayerCannonPlace _playerCannonPlace;
-    private Transform _offsetShoot;
-    private IDamageable _damageable;
-
     private PlayerAttack _playerAttack;
-    private CannonBallPoolManager _objectPooler;
 
-    private void Awake()
+    protected override void Awake()
     {
-        _offsetShoot = transform.GetChild(0);
-        _damageable = GetComponentInParent<IDamageable>();
+        base.Awake();
         _playerAttack = GetComponentInParent<PlayerAttack>();
-
-        _objectPooler = FindFirstObjectByType<CannonBallPoolManager>();
     }
 
     private void OnEnable()
