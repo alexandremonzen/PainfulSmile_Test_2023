@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public sealed class DamageOnContact : MonoBehaviour, IDamage
@@ -10,6 +11,8 @@ public sealed class DamageOnContact : MonoBehaviour, IDamage
     [Header("Collision Types")]
     [SerializeField] private bool _onCollision = true;
     [SerializeField] private bool _onTrigger = true;
+
+    public event Action WasDestroyed;
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -40,7 +43,10 @@ public sealed class DamageOnContact : MonoBehaviour, IDamage
         damageable.TakeDamage(_damageValue, _team);
 
         if (_autoDestroy)
+        {
+            WasDestroyed?.Invoke();
             this.gameObject.SetActive(false);
+        }
     }
 
     public void SetTeamSide(Team teamSide)

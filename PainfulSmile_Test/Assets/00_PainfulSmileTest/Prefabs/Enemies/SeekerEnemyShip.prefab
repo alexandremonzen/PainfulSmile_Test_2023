@@ -175,9 +175,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8601745200431753321}
   - component: {fileID: 4124524785640083622}
-  - component: {fileID: 8229495613207534350}
+  - component: {fileID: 5193191566857621657}
+  - component: {fileID: 4016474471648622004}
+  - component: {fileID: 8831958700087731872}
+  - component: {fileID: 6369432766025328397}
   - component: {fileID: 1208900475165681218}
   - component: {fileID: 7847740131561779465}
+  - component: {fileID: 2814731330803743724}
   m_Layer: 0
   m_Name: SeekerEnemyShip
   m_TagString: Untagged
@@ -218,7 +222,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthAttributes: {fileID: 11400000, guid: 3f0321e212667b344bd2391eaa08ad2c, type: 2}
   _team: 2
---- !u!114 &8229495613207534350
+--- !u!114 &5193191566857621657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797554923926957671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2774993fea7364d85fb095d7e3327f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToSeek: {fileID: 0}
+  _distanceToStop: 0.1
+  _movementSpeed: 2
+--- !u!114 &4016474471648622004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797554923926957671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4745560015db2cc4fb52616d9444e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageValue: 25
+  _team: 2
+  _autoDestroy: 1
+  _onCollision: 1
+  _onTrigger: 1
+--- !u!114 &8831958700087731872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,6 +264,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9facbd350fe738b44a2d47666fd4e7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 7507507375670350292, guid: 0d215750451e5e34989349bef23f0315, type: 3}
+--- !u!114 &6369432766025328397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797554923926957671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad0c121dbadd6a43a50bdd0b9b4b12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionPrefab: {fileID: 7507507375670350292, guid: 0d215750451e5e34989349bef23f0315, type: 3}
@@ -293,6 +342,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.02365172}
   m_Size: {x: 0.71, y: 1.638596}
   m_Direction: 0
+--- !u!195 &2814731330803743724
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797554923926957671}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.65
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.81
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4448691431396816325
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +706,7 @@ Transform:
   m_GameObject: {fileID: 6942330392378025235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
