@@ -21,10 +21,8 @@ public sealed class MovementAI : MonoBehaviour, IMovementAI
         _rigidbody = GetComponent<Rigidbody2D>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        _navMeshAgent.updateRotation = false;
-        _navMeshAgent.updateUpAxis = false;
-
         _canMove = true;
+        SetupNavMesh();
 
         if (_targetToSeek == null)
         {
@@ -86,7 +84,14 @@ public sealed class MovementAI : MonoBehaviour, IMovementAI
         _rigidbody.rotation = _angleDirection;
     }
 
+    private void SetupNavMesh()
+    {
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
 
+        _navMeshAgent.speed = _movementSpeed;
+        _navMeshAgent.stoppingDistance = _distanceToStop;
+    }
 
     public float GetDistanceFromTarget()
     {

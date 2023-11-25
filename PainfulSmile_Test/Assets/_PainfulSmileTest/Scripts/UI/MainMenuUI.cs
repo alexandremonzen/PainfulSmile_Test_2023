@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour
+public sealed class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private string _gameplayScene;
     [SerializeField] private GameObject _options;

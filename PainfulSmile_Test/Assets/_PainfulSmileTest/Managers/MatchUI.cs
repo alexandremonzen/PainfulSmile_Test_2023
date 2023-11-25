@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +5,8 @@ public class MatchUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _sessionTimeLeft;
     [SerializeField] private TMP_Text _score;
+    [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private TMP_Text _endScore;
     
     private MatchManager _matchManager;
     private ScoreManager _scoreManager;
@@ -21,6 +21,7 @@ public class MatchUI : MonoBehaviour
     {
         _matchManager.SessionTimeWasUpdated += UpdateSessionTimeLeft;
         _matchManager.MatchWasFinished += SetSessionTimeLeftDefault;
+        _matchManager.MatchWasFinished += ShowGameOverScreen;
 
         _scoreManager.ScoreWasUpdated += ScoreWasUpdated;
     }
@@ -29,6 +30,7 @@ public class MatchUI : MonoBehaviour
     {
         _matchManager.SessionTimeWasUpdated -= UpdateSessionTimeLeft;
         _matchManager.MatchWasFinished -= SetSessionTimeLeftDefault;
+        _matchManager.MatchWasFinished -= ShowGameOverScreen;
 
         _scoreManager.ScoreWasUpdated -= ScoreWasUpdated;
     }
@@ -46,5 +48,16 @@ public class MatchUI : MonoBehaviour
     private void ScoreWasUpdated(int score)
     {
         _score.text = $"Score: {score}";
+    }
+
+    private void ShowGameOverScreen()
+    {
+        _gameOverScreen.SetActive(true);
+        UpdateEndScore();
+    }
+
+    private void UpdateEndScore()
+    {
+        _endScore.text = $"Score: {_scoreManager.TotalScore}";
     }
 }

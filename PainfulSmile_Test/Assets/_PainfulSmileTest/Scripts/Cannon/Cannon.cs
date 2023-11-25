@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Cannon : MonoBehaviour
 {
     [SerializeField] protected CannonBall _cannonBall;
-    
+
     protected Transform _offsetShoot;
     protected IDamageable _damageable;
 
@@ -20,8 +20,12 @@ public abstract class Cannon : MonoBehaviour
         _objectPooler = FindFirstObjectByType<CannonBallPoolManager>();
     }
 
-    protected void InvokeCannonShooted()
+    public virtual void ShootCannonBall()
     {
+        CannonBall cannonBall = _objectPooler.GetPooledObject(_cannonBall);
+        cannonBall.gameObject.SetActive(true);
+        cannonBall.BeShooted(_offsetShoot.transform.up, _offsetShoot, _damageable);
+
         CannonShooted?.Invoke();
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GeneralButtonsUI : MonoBehaviour
+public sealed class GeneralButtonsUI : MonoBehaviour
 {
     private SceneLoadManager _sceneLoadManager;
 

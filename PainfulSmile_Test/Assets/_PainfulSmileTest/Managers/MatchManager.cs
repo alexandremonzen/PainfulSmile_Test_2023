@@ -8,10 +8,13 @@ public sealed class MatchManager : MonoBehaviour
     [SerializeField] private float _gameSessionTime = 60;
     [SerializeField] private bool _usePlayerPrefs = true;
 
+    private Health _playerHealth;
+
+    #region Events
     public event Action<float> SessionTimeWasUpdated;
     public event Action<bool> MatchWasStarted;
     public event Action MatchWasFinished;
-
+    #endregion
     private void Awake()
     {
         if (_usePlayerPrefs)
@@ -19,7 +22,20 @@ public sealed class MatchManager : MonoBehaviour
             _gameSessionTime = PlayerPrefs.GetFloat("GameSessionTime", 2);
             _gameSessionTime *= 60;
         }
+
+        _playerHealth = FindFirstObjectByType<PlayerMovement>().GetComponent<Health>();
     }
+
+    private void OnEnable()
+    {
+        _playerHealth.HealthWasDepleted += FinishMatchDelay;
+    }
+
+    private void OnDisable()
+    {
+        _playerHealth.HealthWasDepleted += FinishMatchDelay;
+    }
+
 
     private void Start()
     {
@@ -28,14 +44,14 @@ public sealed class MatchManager : MonoBehaviour
         Invoke(nameof(DelayStart), 1);
     }
 
-    private void DelayStart()
-    {
-        MatchWasStarted?.Invoke(true);
-    }
-
     private void Update()
     {
         MatchTimer();
+    }
+
+    private void DelayStart()
+    {
+        MatchWasStarted?.Invoke(true);
     }
 
     private void MatchTimer()
@@ -48,8 +64,18 @@ public sealed class MatchManager : MonoBehaviour
         }
         else
         {
-            MatchWasFinished?.Invoke();
-            Time.timeScale = 0;
+            FinishMatchDelay();
         }
+    }
+
+    private void FinishMatchDelay()
+    {
+        Invoke(nameof(FinishMatch), 1);
+    }
+
+    private void FinishMatch()
+    {
+        MatchWasFinished?.Invoke();
+        Time.timeScale = 0;
     }
 }
