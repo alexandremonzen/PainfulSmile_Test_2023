@@ -18,6 +18,7 @@ public sealed class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
+        UpdateFillValue(_health.MaxHealth);
         _health.HealthValueWasChanged += UpdateFillValue;
     }
 
