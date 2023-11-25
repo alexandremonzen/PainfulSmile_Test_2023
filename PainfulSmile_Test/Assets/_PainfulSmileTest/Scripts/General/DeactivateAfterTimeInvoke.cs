@@ -9,6 +9,11 @@ public sealed class DeactivateAfterTimeInvoke : MonoBehaviour
         Invoke(nameof(Deactivate), _timeToDeactivate);
     }
 
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
     private void Deactivate()
     {
         this.gameObject.SetActive(false);

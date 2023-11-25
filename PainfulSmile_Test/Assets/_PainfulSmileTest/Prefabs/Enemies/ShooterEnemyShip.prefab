@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetToSeek: {fileID: 0}
   _distanceToStop: 5
-  _movementSpeed: 2
+  _movementSpeed: 1.5
 --- !u!114 &5359515031680107134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.65
   m_Speed: 2
-  m_Acceleration: 8
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -800,6 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonShootClip: {fileID: 8300000, guid: 8349fbeef86df514cb68e3eb69792206, type: 3}
+  _pitchRange: 0.4
 --- !u!1 &8069553267727644506
 GameObject:
   m_ObjectHideFlags: 0

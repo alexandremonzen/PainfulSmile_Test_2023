@@ -28,13 +28,4 @@ public sealed class PlayerCannon : Cannon
         if(_playerCannonPlace == PlayerCannonPlace.Side)
             _playerAttack.MultipleShotWasPerfomed -= ShootCannonBall;
     }
-
-    public void ShootCannonBall()
-    {
-        CannonBall cannonBall = _objectPooler.GetPooledObject(_cannonBall);
-        cannonBall.gameObject.SetActive(true);
-        cannonBall.BeShooted(_offsetShoot.transform.up, _offsetShoot, _damageable);
-        
-        InvokeCannonShooted();
-    }
 }

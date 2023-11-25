@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonShootClip: {fileID: 8300000, guid: f035539baf0871b40b286df7341ea99a, type: 3}
+  _pitchRange: 0.4
 --- !u!1 &3878487839935889650
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonShootClip: {fileID: 8300000, guid: f035539baf0871b40b286df7341ea99a, type: 3}
+  _pitchRange: 0.4
 --- !u!1 &3989955536543733308
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonShootClip: {fileID: 8300000, guid: f035539baf0871b40b286df7341ea99a, type: 3}
+  _pitchRange: 0.4
 --- !u!1 &7436376190640810278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1021,6 @@ Transform:
   - {fileID: 7121484712611949019}
   - {fileID: 6315003982731002317}
   - {fileID: 4296915267240429182}
-  - {fileID: 1838353993982787119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637874385773831611
@@ -1388,46 +1390,6 @@ Transform:
   - {fileID: 6147850357760622003}
   m_Father: {fileID: 290071138668768627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8795549322226631224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1838353993982787119}
-  - component: {fileID: 6063303531216525329}
-  m_Layer: 0
-  m_Name: AudioListener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1838353993982787119
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8795549322226631224}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 290071138668768627}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &6063303531216525329
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8795549322226631224}
-  m_Enabled: 1
 --- !u!1001 &7349743419317825717
 PrefabInstance:
   m_ObjectHideFlags: 0
