@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c299a382903285c4a96588cbcfb165aa, type: 3}
+  m_Name: Phrases Loading Screen
+  m_EditorClassIdentifier: 
+  _phrases:
+  - Too hard? You can adjust the match settings in the menu!
+  - Use the double cannons pressing 'L'!
+  - Remember, the cannon balls can pass through the islands!
+  - Keep moving while shooting! Use W A S D to move around
+  - I'm honestly without any more ideas to put here...
