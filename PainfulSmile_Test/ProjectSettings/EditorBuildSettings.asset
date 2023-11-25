@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00_PainfulSmileTest/Scenes/GameFlow_Scenes/00_Menu.unity
+    path: Assets/_PainfulSmileTest/Scenes/GameFlow_Scenes/00_Menu.unity
     guid: 8ed53ba276f14dd4fb8f4754a3e8d5dd
   - enabled: 1
-    path: Assets/00_PainfulSmileTest/Scenes/GameFlow_Scenes/01_Gameplay.unity
+    path: Assets/_PainfulSmileTest/Scenes/GameFlow_Scenes/01_Gameplay.unity
     guid: 86e8e3808965f9943ac2711f08c34714
   m_configObjects: {}
